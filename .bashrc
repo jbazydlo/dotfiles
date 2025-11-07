@@ -164,7 +164,16 @@ printf '\e[?2004l'  # Disable bracketed paste mode
 # Universal fix for bracketed paste sequences that works with any shell
 # This creates a preexec hook to clean the command before execution
 preexec() {
+    # Store the original command
+    local cmd="$1"
+    
     # Clean the command of bracketed paste sequences
-    1=${1//$'\E[200~'/}
-    1=${1//$'\E[201~'/}
+    cmd="${cmd//$'\E[200~'/}"
+    cmd="${cmd//$'\E[201~'/}"
+    
+    # Update the command if it was modified
+    if [[ "$cmd" != "$1" ]]; then
+        # Use history to replace the command if possible
+        history -s "$cmd"
+    fi
 }
