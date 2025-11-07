@@ -9,6 +9,7 @@ This repository contains my personal dotfiles configuration, set up with a publi
 - `setup.sh` - Script to symlink dotfiles to your home directory
 - `.gitconfig.local` - Private configuration (ignored by Git, but symlinked for convenience)
 - `.bashrc` - Bash configuration with Oh My Bash settings
+- `.blerc` - Ble.sh configuration for enhanced bash experience
 
 ## Setup on a New Machine
 
@@ -42,6 +43,11 @@ This repository contains my personal dotfiles configuration, set up with a publi
 6. For bash-specific private settings, create `.bashrc.local`:
    ```bash
    nano ~/.bashrc.local
+   ```
+
+7. For ble.sh specific settings, create `.blerc.local`:
+   ```bash
+   nano ~/.blerc.local
    ```
 
 ## Security Notes
