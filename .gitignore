@@ -1,0 +1,4 @@
+# Ignore the private secrets file
+.gitconfig.local
+.bashrc.local
+.vimrc.local

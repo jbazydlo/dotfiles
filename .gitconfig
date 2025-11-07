@@ -1,0 +1,17 @@
+# .gitconfig (This file will be PUBLIC)
+
+[core]
+    editor = vim
+    autocrlf = input
+[pull]
+    rebase = true
+[init]
+    defaultBranch = main
+[alias]
+    st = status
+    co = checkout
+    br = branch
+    # Add your favorite aliases here
+
+[include]
+    path = ~/.gitconfig.local
