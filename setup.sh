@@ -9,6 +9,7 @@ echo "Setting up dotfiles from $DOTFILES_DIR"
 # Create symlinks
 echo "Creating symlinks..."
 ln -sf "$DOTFILES_DIR/.gitconfig" ~/.gitconfig
+ln -sf "$DOTFILES_DIR/.gitconfig.local" ~/.gitconfig.local
 
 # Add more symlinks here as you add more dotfiles
 # ln -sf "$DOTFILES_DIR/.bashrc" ~/.bashrc

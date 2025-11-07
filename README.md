@@ -7,7 +7,7 @@ This repository contains my personal dotfiles configuration, set up with a publi
 - `.gitconfig` - Public Git configuration with aliases and settings
 - `.gitignore` - Ignores private configuration files
 - `setup.sh` - Script to symlink dotfiles to your home directory
-- `.gitconfig.local` - Private configuration (not tracked by Git)
+- `.gitconfig.local` - Private configuration (ignored by Git, but symlinked for convenience)
 
 ## Setup on a New Machine
 
@@ -41,8 +41,10 @@ This repository contains my personal dotfiles configuration, set up with a publi
 ## Security Notes
 
 - Sensitive information (email, tokens, etc.) should go in `.gitconfig.local`
-- This file is ignored by Git and will never be committed
+- This file is ignored by Git and will never be committed to the repository
+- However, it's symlinked from your dotfiles folder for convenient editing
 - This allows you to have a public repository while keeping private data secure
+- You have one place (your dotfiles folder) to modify all configuration files
 
 ## Adding More Dotfiles
 
