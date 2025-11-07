@@ -1,17 +1,33 @@
 # .gitconfig (This file will be PUBLIC)
 
-[core]
-    editor = vim
-    autocrlf = input
+[column]
+	ui = auto
+[branch]
+	sort = -committerdate
+[tag]
+	sort = version:refname
+[diff]
+	algorithm = histogram
+	colorMoved = plain
+	mnemonicPrefix = true
+	renames = true
+[push]
+	autoSetupRemote = true
+	followTags = true
+[fetch]
+	prune = true
+	pruneTags = true
+	all = true
+[help]
+	autocorrect = prompt
+[rebase]
+	autoSquash = true
+	autoStash = true
+	updateRefs = true
+[merge]
+	conflictstyle = zdiff3
 [pull]
-    rebase = true
-[init]
-    defaultBranch = main
-[alias]
-    st = status
-    co = checkout
-    br = branch
-    # Add your favorite aliases here
+	rebase = true
 
 [include]
-    path = ~/.gitconfig.local
+	path = ~/.gitconfig.local
