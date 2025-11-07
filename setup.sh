@@ -4,7 +4,38 @@
 # Directory where this script is located
 DOTFILES_DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
 
+# Install Oh My Bash if not already installed
+install_oh_my_bash() {
+    if [ ! -d "$HOME/.oh-my-bash" ]; then
+        echo "Installing Oh My Bash..."
+        git clone https://github.com/ohmybash/oh-my-bash.git ~/.oh-my-bash
+    else
+        echo "Oh My Bash is already installed"
+    fi
+}
+
+# Install Ble.sh if not already installed
+install_ble_sh() {
+    if [ ! -d "$HOME/.local/share/blesh" ]; then
+        echo "Installing Ble.sh..."
+        cd /tmp
+        git clone --depth 1 https://github.com/akinomyoga/ble.sh.git
+        cd ble.sh
+        make
+        sudo make install
+        cd /tmp
+        rm -rf ble.sh
+        cd "$DOTFILES_DIR"
+    else
+        echo "Ble.sh is already installed"
+    fi
+}
+
 echo "Setting up dotfiles from $DOTFILES_DIR"
+
+# Install dependencies if needed
+install_oh_my_bash
+install_ble_sh
 
 # Create symlinks
 echo "Creating symlinks..."

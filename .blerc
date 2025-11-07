@@ -1,1 +1,13 @@
+# Ble.sh Configuration
+# This file contains settings for Ble.sh (Bash Line Editor)
+# For more options, see: https://github.com/akinomyoga/ble.sh/wiki/Options
+
+# Don't mark errexit with special characters
 bleopt exec_errexit_mark=
+
+# You can add more options here or create a .blerc.local file for private settings
+# Example options to consider:
+# bleopt history_preserve_point=yes  # Preserve cursor position when browsing history
+# bleopt history_share=yes           # Share history between bash sessions
+# bleopt history_dupe_erase=yes      # Remove duplicate commands from history
+# bleopt editor_vim_basic=true       # Enable vim-like keybindings
