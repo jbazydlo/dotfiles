@@ -5,9 +5,17 @@
 # Don't mark errexit with special characters
 bleopt exec_errexit_mark=
 
+# History Management
+bleopt history_share=yes         # Share history between bash sessions
+
+# Editing Behavior
+bleopt complete_auto_complete=yes # Show completion menu automatically
+
+# Keybindings to disable multiline behavior
+ble-bind -f 'C-m' 'accept-line'  # Make Enter always execute commands
+
+# Visual Enhancements
+bleopt highlight_syntax=yes       # Enable syntax highlighting
+
+
 # You can add more options here or create a .blerc.local file for private settings
-# Example options to consider:
-# bleopt history_preserve_point=yes  # Preserve cursor position when browsing history
-# bleopt history_share=yes           # Share history between bash sessions
-# bleopt history_dupe_erase=yes      # Remove duplicate commands from history
-# bleopt editor_vim_basic=true       # Enable vim-like keybindings

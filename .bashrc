@@ -128,7 +128,7 @@ plugins=(
 #OMB_TERM_USE_TPUT=no
 
 source "$OSH"/oh-my-bash.sh
-[[ $- == *i* ]] && source ~/.local/share/blesh/ble.sh --attach=none
+[[ $- == *i* ]] && source ~/.local/share/blesh/ble.sh
 
 # User configuration
 # export MANPATH="/usr/local/man:$MANPATH"
@@ -157,4 +157,14 @@ source "$OSH"/oh-my-bash.sh
 # Example aliases
 # alias bashconfig="mate ~/.bashrc"
 # alias ohmybash="mate ~/.oh-my-bash"
-source -- ~/.local/share/blesh/ble.sh
+# Fix for bracketed paste mode escape sequences
+# This handles the ^[[200~ and ^[[201~ sequences that appear when pasting
+printf '\e[?2004l'  # Disable bracketed paste mode
+
+# Universal fix for bracketed paste sequences that works with any shell
+# This creates a preexec hook to clean the command before execution
+preexec() {
+    # Clean the command of bracketed paste sequences
+    1=${1//$'\E[200~'/}
+    1=${1//$'\E[201~'/}
+}
