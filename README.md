@@ -8,6 +8,7 @@ This repository contains my personal dotfiles configuration, set up with a publi
 - `.gitignore` - Ignores private configuration files
 - `setup.sh` - Script to symlink dotfiles to your home directory
 - `.gitconfig.local` - Private configuration (ignored by Git, but symlinked for convenience)
+- `.bashrc` - Bash configuration with Oh My Bash settings
 
 ## Setup on a New Machine
 
@@ -36,6 +37,11 @@ This repository contains my personal dotfiles configuration, set up with a publi
    [user]
        name = Your Name
        email = your.email@example.com
+   ```
+
+6. For bash-specific private settings, create `.bashrc.local`:
+   ```bash
+   nano ~/.bashrc.local
    ```
 
 ## Security Notes
